@@ -1,0 +1,76 @@
+{% load static %}
+{% include 'includes/navbar.html' %}
+{% block content %}
+<div class="page-heading header-text">
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+    
+        <h3>Properties</h3>
+        </div>
+    </div>
+    </div>
+</div>
+
+	<div class="section properties">
+		<div class="container">
+		<!-- <ul class="properties-filter">
+			<li>
+			<a class="is_active" href="#!" data-filter="*">Show All</a>
+			</li>
+			<li>
+			<a href="#!" data-filter=".adv">Apartment</a>
+			</li>
+			<li>
+			<a href="#!" data-filter=".str">Villa House</a>
+			</li>
+			<li>
+			<a href="#!" data-filter=".rac">Penthouse</a>
+			</li>
+		</ul> -->
+
+
+
+		<div class="row properties-box">
+            {% for property in properties %}
+			<div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 adv">
+			<div class="item">
+				<a href="property-details.html"><img src="{% static 'assets/images/property-01.jpg' %}" alt=""></a>
+				<span class="category">{{property.name}}</span>
+                <br>
+				<div><h6>{{property.address|slice:'20'}}</h6></div>
+                <br>
+				<div><h4><a href="property-details.html">{{property.description|slice:'20'}}</a></h4></div>
+				<ul>
+				<li>No. of Floors: <span>{{property.num_of_floors}}</span></li>
+				<li>No. of Rooms: <span>{{property.num_rooms}}</span></li>
+				
+				
+				<li>Parking: <span>6 spots</span></li>
+				</ul>
+				<div class="main-button">
+				<a href="property-details.html">Schedule a visit</a>
+				</div>
+			</div>
+			</div>
+
+        {% endfor %}
+
+
+
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+			<ul class="pagination">
+				<li><a href="#">1</a></li>
+				<li><a class="is_active" href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">>></a></li>
+			</ul>
+			</div>
+		</div>
+		</div>
+	</div>
+{% endblock content %}
+
+{% include 'includes/footer.html' %}
