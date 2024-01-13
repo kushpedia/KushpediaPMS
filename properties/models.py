@@ -8,7 +8,7 @@ class Property(models.Model):
     num_of_floors = models.IntegerField(null=True, blank=True)
     num_rooms = models.PositiveIntegerField(null=True, blank=True) 
     year_built = models.PositiveIntegerField(null=True, blank=True)
-    featured_image = models.ImageField(upload_to='properties/', default="properties/default.png", null=True, blank=True)
+    featured_image = models.ImageField(default="properties/default.png", null=True, blank=True)
     latitudes = models.FloatField(null=True, blank=True)
     longitudes = models.FloatField(null=True, blank=True)  
     is_available = models.BooleanField(default=True)  

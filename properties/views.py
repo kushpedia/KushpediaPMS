@@ -8,7 +8,7 @@ def addProperties(request):
 
 
 def viewProperty(request):
-    properties = Property.objects.all()
+    properties = Property.objects.filter(is_available=True)
     
     context ={
         'properties' : properties
